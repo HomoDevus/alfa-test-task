@@ -1,0 +1,37 @@
+.header {
+  min-height: 70px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .switch {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .headerRight {
+    display: flex;
+    gap: 30px;
+  }
+
+  .input {
+    border: none;
+    outline: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    background-color: #D9D9D9;
+    transition: background-color linear 10ms;
+
+    &:focus {
+      border: none;
+      background-color: #adadad;
+    }
+  }
+}
+
+.header {
+  box-shadow: rgba(9, 30, 66, 0.25) 0 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
