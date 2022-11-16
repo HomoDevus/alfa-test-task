@@ -14,6 +14,7 @@ const artworksAdapter = createEntityAdapter<Artwork>()
 
 const initialState = artworksAdapter.getInitialState({
     status: 'idle',
+    is_filtered: false
 })
 
 export const fetchArtworksThunk = createAsyncThunk('artworks/fetchArtworks', async () => {
@@ -59,6 +60,9 @@ const artworksSlice = createSlice({
             pushToLocalStorage('deleted_pictures', action.payload)
             artworksAdapter.removeOne(state, action.payload)
         },
+        setIsFiltered(state, action) {
+            state.is_filtered = action.payload
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -96,6 +100,7 @@ export const { selectAll: selectArtworks } = artworksAdapter.getSelectors<RootSt
     (state) => state.artworks
 )
 export const selectArtworkStatus = (state: RootState) => state.artworks.status
-export const { likePicture, removePictureLike, deletePicture } = artworksSlice.actions
+export const selectIsFiltered = (state: RootState) => state.artworks.is_filtered
+export const { likePicture, removePictureLike, deletePicture, setIsFiltered } = artworksSlice.actions
 
 export default artworksSlice.reducer
