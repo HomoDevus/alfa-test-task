@@ -9,16 +9,27 @@ enum PATHS {
     IMAGES = '/full/843,/0/default.jpg',
 }
 
-const FIELDS = new URLSearchParams({
+const QUERY_PARAMS = {
     fields: 'id,title,artist_display,image_id,alt_text,thumbnail',
-})
+}
 
 export async function fetchArtworks(page: string, limit: string) {
     const queryParams = new URLSearchParams({
         page,
         limit,
+        fields: QUERY_PARAMS.fields
     })
-    const response = await fetch(`${URLS.ARTWORKS}?${queryParams}&${FIELDS}`)
+    const response = await fetch(`${URLS.ARTWORKS}?${queryParams}`)
+    const { data, errors }: JSONResponse = await response.json()
+    return handleFetchError(response, data, errors)
+}
+
+export async function fetchArtworksByIds(ids: number[]) {
+    const queryParams = new URLSearchParams({
+        ids: ids.join(','),
+        fields: QUERY_PARAMS.fields
+    })
+    const response = await fetch(`${URLS.ARTWORKS}?${queryParams}`)
     const { data, errors }: JSONResponse = await response.json()
     return handleFetchError(response, data, errors)
 }

@@ -1,40 +1,28 @@
 import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import {
-    fetchArtworksThunk,
-    selectArtworks,
-    selectArtworkStatus,
+  fetchArtworksThunk,
+  selectArtworks,
 } from '../../features/artworks/artworksSlice'
-import PictureItem from '../PictureItem/PictureItem'
 import styles from './PicturesBoard.module.scss'
+import PictureItemController from '../PictureItem/PictureItemController'
 
 const PicturesBoard = () => {
-    const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch()
 
-    const artworksData = useAppSelector(selectArtworks)
-    const artworksStatus = useAppSelector(selectArtworkStatus)
+  const artworksData = useAppSelector(selectArtworks)
 
-    useEffect(() => {
-        if (!artworksData.length && artworksStatus !== 'pending') {
-            dispatch(fetchArtworksThunk())
-        }
-    }, [dispatch, artworksData, artworksStatus])
+  useEffect(() => {
+    dispatch(fetchArtworksThunk())
+  }, [dispatch])
 
-    return (
-        <div className={styles.board}>
-            {artworksData.map((picture) => (
-                <PictureItem
-                    key={picture.id}
-                    title={picture.title}
-                    altText={picture.alt_text}
-                    artistDisplay={picture.artist_display}
-                    imageId={picture.image_id}
-                    imageWidth={picture.thumbnail.width}
-                    imageHeight={picture.thumbnail.height}
-                />
-            ))}
-        </div>
-    )
+  return (
+    <div className={styles.board}>
+      {artworksData.map((picture) => (
+        <PictureItemController key={picture.id} picture={picture} />
+      ))}
+    </div>
+  )
 }
 
 export default PicturesBoard

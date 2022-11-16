@@ -9,7 +9,7 @@
   padding-top: 20px;
 
   &:hover .iconsContainer {
-    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .title, .artist {
@@ -41,7 +41,7 @@
       background-color: #D9D9D9;
       padding: 6px 0;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-      opacity: 0;
+      visibility: hidden;
 
       hr {
         width: 70%;
@@ -65,8 +65,9 @@
           fill: black;
         }
 
-        &.active svg {
+        &.likeButton.liked svg {
           fill: #e63946;
+          visibility: visible;
         }
       }
 
