@@ -1,5 +1,5 @@
-import React from 'react';
+import React from 'react'
 
 export type HeaderProps = {
-  handleFavoriteFilterChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleFavoriteFilterChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import PictureItem from './PictureItem'
 import { PictureItemControllerProps } from './PictureItemTypes'
-import { deletePicture, likePicture, removePictureLike } from '../../features/artworks/artworksSlice';
-import { useAppDispatch } from '../../app/hooks';
+import { deletePicture, likePicture, removePictureLike } from '../../features/artworks/artworksSlice'
+import { useAppDispatch } from '../../app/hooks'
 
 const PictureItemController = ({ picture }: PictureItemControllerProps) => {
   const dispatch = useAppDispatch()
@@ -25,8 +25,8 @@ const PictureItemController = ({ picture }: PictureItemControllerProps) => {
       altText={picture.alt_text}
       artistDisplay={picture.artist_display}
       imageId={picture.image_id}
-      imageWidth={picture.thumbnail.width}
-      imageHeight={picture.thumbnail.height}
+      imageWidth={picture.width}
+      imageHeight={picture.height}
       isLiked={picture.is_liked}
       handleLikeClick={handleLikeClick}
       handleDeleteClick={handleDeleteClick}

@@ -2,9 +2,9 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import artworksReducer from '../features/artworks/artworksSlice'
 
 export const store = configureStore({
-    reducer: {
-        artworks: artworksReducer,
-    },
+  reducer: {
+    artworks: artworksReducer,
+  },
 })
 
 export type AppDispatch = typeof store.dispatch

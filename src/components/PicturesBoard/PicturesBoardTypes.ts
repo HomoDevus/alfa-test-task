@@ -1,3 +1,3 @@
 export type PicturesBoardProps = {
-  isFiltered: boolean;
+  isFiltered: boolean
 }

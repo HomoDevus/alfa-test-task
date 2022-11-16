@@ -33,9 +33,8 @@ const PictureItem = ({
         </div>
         <img
           className={styles.image}
-          src={`https://www.artic.edu/iiif/2/${imageId}/full/843,/0/default.jpg`}
+          src={`https://www.artic.edu/iiif/2/${imageId}/full/600,/0/default.jpg`}
           alt={altText}
-          loading="lazy"
         />
       </div>
     </div>
