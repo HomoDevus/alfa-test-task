@@ -5,6 +5,8 @@ import clsx from 'clsx'
 import styles from './PictureItem.module.scss'
 import HeartIcon from '../../icons/HeartIcon'
 import TrashIcon from '../../icons/TrashIcon'
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const PictureItem = ({
   title,
@@ -16,6 +18,7 @@ const PictureItem = ({
   isLiked,
   handleLikeClick,
   handleDeleteClick,
+  thumbnailLqip,
 }: PictureItemProps) => {
   return (
     <div className={clsx(styles.pictureCard, styles[getPictureRatio(imageWidth, imageHeight)])}>
@@ -32,8 +35,13 @@ const PictureItem = ({
           </button>
         </div>
         <img
-          className={styles.image}
-          src={`https://www.artic.edu/iiif/2/${imageId}/full/600,/0/default.jpg`}
+          className={clsx(styles.image, "lazyload")}
+          src={thumbnailLqip}
+          data-src={`https://www.artic.edu/iiif/2/${imageId}/full/600,/0/default.jpg`}
+          data-srcset={`https://www.artic.edu/iiif/2/${imageId}/full/700,/0/default.jpg 2500w,
+          https://www.artic.edu/iiif/2/${imageId}/full/600,/0/default.jpg 2000w,
+          https://www.artic.edu/iiif/2/${imageId}/full/500,/0/default.jpg 1440w,
+          https://www.artic.edu/iiif/2/${imageId}/full/400,/0/default.jpg 1024w`}
           alt={altText}
         />
       </div>

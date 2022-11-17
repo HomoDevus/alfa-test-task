@@ -5,12 +5,8 @@ enum URLS {
   IMAGES = 'https://www.artic.edu/iiif/2/',
 }
 
-enum PATHS {
-  IMAGES = '/full/843,/0/default.jpg',
-}
-
 const QUERY_PARAMS = {
-  fields: 'id,title,artist_display,image_id,alt_text,width,height',
+  fields: 'id,title,artist_display,image_id,alt_text,width,height,thumbnail',
 }
 
 export async function fetchArtworks(page: number, limit: number) {

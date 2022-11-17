@@ -28,6 +28,7 @@ const PictureItemController = ({ picture }: PictureItemControllerProps) => {
       imageWidth={picture.width}
       imageHeight={picture.height}
       isLiked={picture.is_liked}
+      thumbnailLqip={picture.thumbnail.lqip}
       handleLikeClick={handleLikeClick}
       handleDeleteClick={handleDeleteClick}
     />
