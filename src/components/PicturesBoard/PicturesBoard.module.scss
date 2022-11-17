@@ -1,9 +1,23 @@
 .board {
-  //display: grid;
   column-count: 4;
   column-gap: 20px;
-  //gap: 20px;
-  //grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  //grid-auto-flow: dense;
   padding: 0 40px;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .board {
+    column-count: 3;
+  }
+}
+
+@media only screen and (min-width: 460px) and (max-width: 600px) {
+  .board {
+    column-count: 2;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .board {
+    column-count: 1;
+  }
 }

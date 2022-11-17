@@ -10,7 +10,7 @@ import {
 import styles from './PicturesBoard.module.scss'
 import PictureItemController from '../PictureItem/PictureItemController'
 import { Artwork } from '../../features/artworks/artworksSliceTypes'
-import { columnToRow } from '../../utils/app_helpers';
+import { columnToRow } from '../../utils/app_helpers'
 
 const PicturesBoard = () => {
   const dispatch = useAppDispatch()
@@ -49,7 +49,9 @@ const PicturesBoard = () => {
         })
       )
     } else {
-      setFilteredArtworks(columnToRow(artworksData, 4))
+      let columns =
+        window.innerWidth > 1000 ? 4 : window.innerWidth > 600 ? 3 : window.innerWidth > 460 ? 2 : 1
+      setFilteredArtworks(columnToRow(artworksData, columns))
     }
   }, [isFiltered, artworksData])
 

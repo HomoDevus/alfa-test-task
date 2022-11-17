@@ -1,3 +1,13 @@
+@media only screen and (max-width: 460px) {
+  .heading {
+    font-size: 18px;
+  }
+
+  .favoriteLabel {
+    font-size: 0.8rem;
+  }
+}
+
 .header {
   min-height: 70px;
   padding: 0 40px;

@@ -5,10 +5,10 @@ import { HeaderProps } from './HeaderTypes'
 const Header = ({ handleFavoriteFilterChange }: HeaderProps) => {
   return (
     <header className={styles.header}>
-      <h2>Art gallery</h2>
+      <h2 className={styles.heading}>Art gallery</h2>
       <div className={styles.headerRight}>
         <div className={styles.switch}>
-          <label htmlFor="favorite">Show only favorite</label>
+          <label htmlFor="favorite" className={styles.favoriteLabel}>Show only favorite</label>
           <input
             id="favorite"
             type="checkbox"
@@ -16,7 +16,7 @@ const Header = ({ handleFavoriteFilterChange }: HeaderProps) => {
             onChange={handleFavoriteFilterChange}
           ></input>
         </div>
-        <input className={styles.input} placeholder="Search for picture..." />
+        {/*<input className={styles.input} placeholder="Search for a picture..." />*/}
       </div>
     </header>
   )

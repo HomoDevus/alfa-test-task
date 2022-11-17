@@ -34,6 +34,9 @@ export const fetchArtworksThunk = createAsyncThunk('artworks/fetchArtworks', asy
   response.data = response.data?.filter(function removeDeleted(picture) {
     return !removedArtworks.includes(picture.id)
   })
+  response.data = response.data?.filter(function removeWithoutImage(picture) {
+    return picture.image_id
+  })
   return response
 })
 
