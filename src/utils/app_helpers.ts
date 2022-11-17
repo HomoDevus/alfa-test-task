@@ -67,7 +67,7 @@ export function columnToRow(items: any[], columns: number) {
     for (let j = 0; j < columns; j++) {
       matrix[i].push(items[index])
       index++
-      if (index >= items.length) break;
+      if (index >= items.length) break
     }
   }
 

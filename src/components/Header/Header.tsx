@@ -8,7 +8,9 @@ const Header = ({ handleFavoriteFilterChange }: HeaderProps) => {
       <h2 className={styles.heading}>Art gallery</h2>
       <div className={styles.headerRight}>
         <div className={styles.switch}>
-          <label htmlFor="favorite" className={styles.favoriteLabel}>Show only favorite</label>
+          <label htmlFor="favorite" className={styles.favoriteLabel}>
+            Show only favorite
+          </label>
           <input
             id="favorite"
             type="checkbox"

@@ -10,7 +10,7 @@ export type PictureItemProps = {
   isLiked: boolean
   handleLikeClick: () => void
   handleDeleteClick: () => void
-  thumbnailLqip: string;
+  thumbnailLqip: string
 }
 
 export type PictureItemControllerProps = {

@@ -5,8 +5,8 @@ import clsx from 'clsx'
 import styles from './PictureItem.module.scss'
 import HeartIcon from '../../icons/HeartIcon'
 import TrashIcon from '../../icons/TrashIcon'
-import 'lazysizes';
-import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import 'lazysizes'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit'
 
 const PictureItem = ({
   title,
@@ -35,7 +35,7 @@ const PictureItem = ({
           </button>
         </div>
         <img
-          className={clsx(styles.image, "lazyload")}
+          className={clsx(styles.image, 'lazyload')}
           src={thumbnailLqip}
           data-src={`https://www.artic.edu/iiif/2/${imageId}/full/600,/0/default.jpg`}
           data-srcset={`https://www.artic.edu/iiif/2/${imageId}/full/700,/0/default.jpg 2500w,

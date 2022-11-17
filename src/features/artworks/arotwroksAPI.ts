@@ -32,7 +32,7 @@ export async function fetchArtworksByIds(ids: number[]) {
 
 // **************************
 
-function handleFetchError(response: Response, parsedResponse: JSONResponse ) {
+function handleFetchError(response: Response, parsedResponse: JSONResponse) {
   if (response.ok) {
     return parsedResponse
   } else {
