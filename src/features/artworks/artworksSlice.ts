@@ -47,7 +47,7 @@ export const fetchLikedArtworksThunk = createAsyncThunk('artworks/fetchLikedArtw
   response.data = response.data?.map(function addIsLiked(picture) {
     return {
       ...picture,
-      id_liked: true,
+      is_liked: true,
     }
   })
   return response
